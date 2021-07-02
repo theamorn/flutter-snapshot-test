@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:snapshot/avatar.dart';
 
 void main() {
   runApp(MyApp());
@@ -100,6 +101,14 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            AvatarCircle(
+                size: 200.0,
+                icon: Icon(Icons.people, size: 100),
+                name: "Amorn",
+                image: Image.network('https://picsum.photos/250?image=9'),
+                hasStar: true,
+                hasBorder: true,
+                hasLogo: true)
           ],
         ),
       ),
