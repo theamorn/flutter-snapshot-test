@@ -27,18 +27,18 @@ void main() {
               AvatarCircle(size: 100, icon: Icon(Icons.people), name: "Amorn"),
           name: 'Default',
           onCreate: (scenarioWidgetKey) async {
-            // final logoFinder = find.descendant(
-            //   of: find.byKey(scenarioWidgetKey),
-            //   matching: find.byKey(Key('logoAvatar')),
-            // );
+            final logoFinder = find.descendant(
+              of: find.byKey(scenarioWidgetKey),
+              matching: find.byKey(Key('logoAvatar')),
+            );
 
-            // final starIconFinder = find.descendant(
-            //   of: find.byKey(scenarioWidgetKey),
-            //   matching: find.byKey(Key('starAvatar')),
-            // );
+            final starIconFinder = find.descendant(
+              of: find.byKey(scenarioWidgetKey),
+              matching: find.byKey(Key('starAvatar')),
+            );
 
-            // expect(logoFinder, findsOneWidget);
-            // expect(starIconFinder, findsOneWidget);
+            expect(logoFinder, findsNothing);
+            expect(starIconFinder, findsNothing);
           })
       ..addScenario(
           widget: AvatarCircle(
@@ -46,31 +46,20 @@ void main() {
               icon: Icon(Icons.people),
               name: "Amorn",
               hasBorder: true),
-          name: 'Goal Reach',
+          name: 'Has Border',
           onCreate: (scenarioWidgetKey) async {
-            final badgeFinder = find.descendant(
+            final logoFinder = find.descendant(
               of: find.byKey(scenarioWidgetKey),
-              matching: find.byKey(Key('badge')),
+              matching: find.byKey(Key('logoAvatar')),
             );
 
-            final memberIconFinder = find.descendant(
+            final starIconFinder = find.descendant(
               of: find.byKey(scenarioWidgetKey),
-              matching: find.byKey(Key('memberIcon')),
+              matching: find.byKey(Key('starAvatar')),
             );
 
-            final memberAmountFinder = find.descendant(
-              of: find.byKey(scenarioWidgetKey),
-              matching: find.byKey(Key('memberAmount')),
-            );
-
-            final progressBarFinder = find.descendant(
-              of: find.byKey(scenarioWidgetKey),
-              matching: find.byKey(Key('progressBar')),
-            );
-            // expect(badgeFinder, findsOneWidget);
-            // expect(memberIconFinder, findsOneWidget);
-            // expect(memberAmountFinder, findsOneWidget);
-            // expect(progressBarFinder, findsOneWidget);
+            expect(logoFinder, findsNothing);
+            expect(starIconFinder, findsNothing);
           })
       ..addScenario(
           widget: AvatarCircle(
@@ -80,31 +69,20 @@ void main() {
             hasBorder: true,
             hasLogo: true,
           ),
-          name: 'Goal Reach > 100%',
+          name: 'Has Border and Has Logo',
           onCreate: (scenarioWidgetKey) async {
-            final badgeFinder = find.descendant(
+            final logoFinder = find.descendant(
               of: find.byKey(scenarioWidgetKey),
-              matching: find.byKey(Key('badge')),
+              matching: find.byKey(Key('logoAvatar')),
             );
 
-            final memberIconFinder = find.descendant(
+            final starIconFinder = find.descendant(
               of: find.byKey(scenarioWidgetKey),
-              matching: find.byKey(Key('memberIcon')),
+              matching: find.byKey(Key('starAvatar')),
             );
 
-            final memberAmountFinder = find.descendant(
-              of: find.byKey(scenarioWidgetKey),
-              matching: find.byKey(Key('memberAmount')),
-            );
-
-            final progressBarFinder = find.descendant(
-              of: find.byKey(scenarioWidgetKey),
-              matching: find.byKey(Key('progressBar')),
-            );
-            // expect(badgeFinder, findsOneWidget);
-            // expect(memberIconFinder, findsOneWidget);
-            // expect(memberAmountFinder, findsOneWidget);
-            // expect(progressBarFinder, findsOneWidget);
+            expect(logoFinder, findsOneWidget);
+            expect(starIconFinder, findsNothing);
           })
       ..addScenario(
           widget: AvatarCircle(
@@ -115,101 +93,65 @@ void main() {
               hasLogo: true,
               hasStar: true,
               hasCloudCenter: true),
-          name: 'Minus Goal',
+          name: 'Has Logo Star and Cloud',
           onCreate: (scenarioWidgetKey) async {
-            final badgeFinder = find.descendant(
+            final logoFinder = find.descendant(
               of: find.byKey(scenarioWidgetKey),
-              matching: find.byKey(Key('badge')),
+              matching: find.byKey(Key('logoAvatar')),
             );
 
-            final memberIconFinder = find.descendant(
+            final starIconFinder = find.descendant(
               of: find.byKey(scenarioWidgetKey),
-              matching: find.byKey(Key('memberIcon')),
+              matching: find.byKey(Key('starAvatar')),
             );
 
-            final memberAmountFinder = find.descendant(
-              of: find.byKey(scenarioWidgetKey),
-              matching: find.byKey(Key('memberAmount')),
-            );
-
-            final progressBarFinder = find.descendant(
-              of: find.byKey(scenarioWidgetKey),
-              matching: find.byKey(Key('progressBar')),
-            );
-            // expect(badgeFinder, findsNothing);
-            // expect(memberIconFinder, findsNothing);
-            // expect(memberAmountFinder, findsNothing);
-            // expect(progressBarFinder, findsOneWidget);
+            expect(logoFinder, findsOneWidget);
+            expect(starIconFinder, findsOneWidget);
           })
       ..addScenario(
           widget: AvatarCircle(
-              size: 100,
+              size: 140,
               icon: Icon(Icons.people),
               name: "Amorn",
               hasBorder: true,
               hasLogo: true,
-              hasStar: true,
               hasCloudCenter: true),
-          name: 'Zero',
+          name: 'Has Logo Border and Center',
           onCreate: (scenarioWidgetKey) async {
-            final badgeFinder = find.descendant(
+            final logoFinder = find.descendant(
               of: find.byKey(scenarioWidgetKey),
-              matching: find.byKey(Key('badge')),
+              matching: find.byKey(Key('logoAvatar')),
             );
 
-            final memberIconFinder = find.descendant(
+            final starIconFinder = find.descendant(
               of: find.byKey(scenarioWidgetKey),
-              matching: find.byKey(Key('memberIcon')),
+              matching: find.byKey(Key('starAvatar')),
             );
 
-            final memberAmountFinder = find.descendant(
-              of: find.byKey(scenarioWidgetKey),
-              matching: find.byKey(Key('memberAmount')),
-            );
-
-            final progressBarFinder = find.descendant(
-              of: find.byKey(scenarioWidgetKey),
-              matching: find.byKey(Key('progressBar')),
-            );
-            // expect(badgeFinder, findsNothing);
-            // expect(memberIconFinder, findsOneWidget);
-            // expect(memberAmountFinder, findsOneWidget);
-            // expect(progressBarFinder, findsOneWidget);
+            expect(logoFinder, findsOneWidget);
+            expect(starIconFinder, findsNothing);
           })
       ..addScenario(
           widget: AvatarCircle(
-              size: 100,
-              icon: Icon(Icons.people),
+              size: 200,
+              image: Image.asset("images/pikachu.png"),
               name: "Amorn",
               hasBorder: true,
-              hasLogo: true,
-              hasStar: true,
-              hasCloudCenter: false),
-          name: '30% Goal',
+              hasStar: true),
+          name: 'Has border logo star',
           onCreate: (scenarioWidgetKey) async {
-            final badgeFinder = find.descendant(
+            final logoFinder = find.descendant(
               of: find.byKey(scenarioWidgetKey),
-              matching: find.byKey(Key('badge')),
+              matching: find.byKey(Key('logoAvatar')),
             );
 
-            final memberIconFinder = find.descendant(
+            final starIconFinder = find.descendant(
               of: find.byKey(scenarioWidgetKey),
-              matching: find.byKey(Key('memberIcon')),
+              matching: find.byKey(Key('starAvatar')),
             );
 
-            final memberAmountFinder = find.descendant(
-              of: find.byKey(scenarioWidgetKey),
-              matching: find.byKey(Key('memberAmount')),
-            );
-
-            final progressBarFinder = find.descendant(
-              of: find.byKey(scenarioWidgetKey),
-              matching: find.byKey(Key('progressBar')),
-            );
-            // expect(badgeFinder, findsNothing);
-            // expect(memberIconFinder, findsOneWidget);
-            // expect(memberAmountFinder, findsOneWidget);
-            // expect(progressBarFinder, findsOneWidget);
+            expect(logoFinder, findsNothing);
+            expect(starIconFinder, findsOneWidget);
           });
 
     await tester.pumpDeviceBuilder(builder);

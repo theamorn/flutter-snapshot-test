@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 class AvatarCircle extends StatelessWidget {
   final double size;
   final bool hidePadding;
-  final Icon icon;
+  final Icon? icon;
   final Image? image;
   final String name;
   final String title;
@@ -21,11 +21,11 @@ class AvatarCircle extends StatelessWidget {
 
   const AvatarCircle(
       {required this.size,
-      required this.icon,
       required this.name,
       this.hidePadding = false,
       this.decoration,
       this.image,
+      this.icon,
       this.title = "",
       this.nameColor,
       this.fontSize = 14,
@@ -84,7 +84,7 @@ class AvatarCircle extends StatelessWidget {
     return Positioned(
       bottom: size / 16,
       right: size / 16,
-      child: Icon(Icons.plus_one, key: Key('logoAvatar'), size: size / 2.5),
+      child: Icon(Icons.snowmobile, key: Key('logoAvatar'), size: size / 2.5),
     );
   }
 
@@ -114,6 +114,7 @@ class AvatarCircle extends StatelessWidget {
   }
 
   Widget _buildCloudCenter() {
+    if (!hasCloudCenter) return Container();
     return Container(
       child: Stack(
         children: <Widget>[
@@ -135,7 +136,7 @@ class AvatarCircle extends StatelessWidget {
           ),
           Positioned(
             child: Opacity(
-              opacity: 1,
+              opacity: 0.2,
               child: Container(
                 width: this.size,
                 height: this.size,
